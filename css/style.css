@@ -32,13 +32,14 @@ body {
 }
 
 a {
-    color: inherit;
+    color: inherit; /* Hérite de la couleur du parent */
     text-decoration: none;
 }
 
 .section-title {
     margin: 0;
     font-size: 22px;
+    font-weight: 700;
 }
 
 .card {
@@ -241,6 +242,18 @@ a {
 
 /***** ARTICLE HEBERGEMENT ET POPULAIRE *****/
 
+.hebergements-and-populaires {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hebergements, .populaires {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 /***** SECTION HEBERGEMENT *****/
 
 .hebergements {
@@ -251,21 +264,13 @@ a {
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1em;
+    gap: 20px;
 }
 
 .section-hebergement-card {
     background-color: white;
     border: 5px solid transparent;
     border-radius: 20px 20px;
-}
-
-.section-hebergement-card p span {
-    margin-right: -3px;
-}
-
-.section-hebergement-titre h2 {
-    margin: 0;
 }
 
 .section-hebergement-card img {
@@ -275,43 +280,22 @@ a {
     border-radius: 20px 20px 0px 0px;
 }
 
-.section-hebergement-card h3 {
-    margin: 0;
-    padding: 4px 15px 4px 15px;
-}
-
-.section-hebergement-card p {
+.section-hebergement-card h3, .section-hebergement-card p {
     margin: 0;
     padding: 4px 15px 4px 15px;
 }
 
 .afficher-plus {
-    height: 18px;
     margin-top: 30px;
 }
 
 /***** SECTION POPULAIRE *****/
 
-.hebergements-and-populaires {
-    display: flex;
-    justify-content: space-between;
-}
-
 .populaires {
     width: 32%;
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 20px;
-    box-sizing: border-box;
 }
 
-.hebergements {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
+/* Aligner l'icone */
 .populaires-title {
     display: flex;
     justify-content: space-between;
@@ -322,9 +306,8 @@ a {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
-
 
 .card {
     display: flex;
@@ -338,7 +321,6 @@ a {
 }
 
 .populaires-cards .card-content {
-    width: 67%;
     padding-left: 15px;
     display: flex;
     flex-direction: column;
@@ -347,7 +329,7 @@ a {
 }
 
 .populaires-cards .card-title {
-    margin-top: 10px;
+    margin-top: 8px;
     margin-bottom: 4px;
 }
 
@@ -365,16 +347,29 @@ a {
     padding: 30px;
 }
 
+.section-activites-titre h2 {
+    margin: 0;
+}
+
+.activites-card h3 {
+    margin: 0;
+}
+
 .activites-groupe-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    display: grid;
     margin-top: 30px;
-    justify-content: space-between;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.activites-card-titre {
+    border-radius: 20px 20px 20px 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 .activites-card {
-    width: 23%;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
 }
 
 .activites-card img {
@@ -387,30 +382,18 @@ a {
 .activites-card-img {
     height: 380px;
     margin: 0;
-    
-}
-
-.activites-card-titre {
-    border-radius: 0px 0px 20px 20px;
-    padding: 20px 20px 20px 20px;
-    background-color: white;
-}
-
-.activites-card h3{
-    margin: 0;
 }
 
 /***** FOOTER *****/
 
 footer {
-    padding: 1em;
+    padding: 20px;
     display: flex;
-    gap: 20%;
+    gap: 15%;
     background-color: var(--main-bg-color);
 }
 
 footer h3 {
-    font-size: 0.9em;
     margin: 0;
 }
 
@@ -421,8 +404,7 @@ footer ul {
 }
 
 footer li {
-    font-size: 0.8em;
-    margin-top: 1em;
+    margin-top: 10px;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -486,18 +468,12 @@ footer li {
 
     /***** HEADER *****/
 
-    header {
-        height: 115px;
-        margin-bottom: 35px;
-        font-size: 16px;
-    }
-
     .main-header-container {
         width: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
     }
 
     .header-logo {
@@ -508,7 +484,7 @@ footer li {
     }
 
     .header-logo img {
-        width: 61.09px;
+        width: 60px;
         height: 19px;
     }
 
@@ -531,13 +507,13 @@ footer li {
         border-top: 2px solid transparent;
     }
 
-    .header-nav-hebergement {
-        border-bottom: 2px solid var(--main-color);
+    .header-nav-hebergement, .header-nav-activites  {
+        border-bottom: 2px solid var(--main-bg-color);
         color: var(--main-color);
     }
 
-    .header-nav-activites {
-        border-bottom: 2px solid var(--main-bg-color);
+    .header-nav-hebergement:hover, .header-nav-activites:hover {
+        border-bottom: 2px solid var(--main-color);
         color: var(--main-color);
     }
 
@@ -561,7 +537,7 @@ footer li {
 
     .section-recherche {
         max-width: 335px;
-        grid-template-columns: 50px 1fr 49px;
+        grid-template-columns: 50px 1fr 50px;
         gap: 0;
     }
 
@@ -642,8 +618,6 @@ footer li {
         width: 100%;
     }
 
-    
-
     .populaires-cards .card-title {
         font-size: 16px;
     }
@@ -653,6 +627,7 @@ footer li {
     }
 
     .hebergements {
+        width: 100%;
         background-color: white;
         border-radius: 0px;
     }
@@ -660,11 +635,11 @@ footer li {
     .section-hebergement-group-card {
         display: flex;
         flex-direction: column;
+        justify-content: center;
     }
 
     .section-hebergement-card {
-        width: 100%;
-        height: 207px;
+        height: 205px;
     }
 
     .afficher-plus {
@@ -683,7 +658,10 @@ footer li {
     }
 
     .activites-groupe-card {
+        display: flex;
+        justify-content: space-between;
         flex-direction: column;
+        gap: 10px;
     }
 
     .activites-card {
@@ -691,7 +669,7 @@ footer li {
     }
 
     .activites-card-img {
-        height: 141px
+        height: 140px
     }
 
     /***** FOOTER *****/
@@ -701,15 +679,6 @@ footer li {
         padding: 30px 20px 30px 20px;
         flex-direction: column;
         gap: 45px;
-    }
-
-    footer h3{
-        font-size: 18px;
-        font-weight: 700;
-    }
-
-    footer li {
-        font-size: 16px;
     }
 
 }
