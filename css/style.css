@@ -239,11 +239,16 @@ a {
     font-size: 12px;
 }
 
-/***** ARTICLE HEBRGEMENT ET POPULAIRE *****/
+/***** ARTICLE HEBERGEMENT ET POPULAIRE *****/
 
 /***** SECTION HEBERGEMENT *****/
 
+.hebergements {
+    width: 65%;
+}
+
 .section-hebergement-group-card {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1em;
@@ -260,7 +265,7 @@ a {
 }
 
 .section-hebergement-titre h2 {
-    margin: 15px 0px 15px 0px;
+    margin: 0;
 }
 
 .section-hebergement-card img {
@@ -293,27 +298,18 @@ a {
 }
 
 .populaires {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.hebergements {
-    background-color: var(--main-bg-color);
-    border-radius: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/****** Hebergements ***********/
-.hebergements {
-    width: 65%;
-}
-
-/****** Populaires ***********/
-.populaires {
     width: 32%;
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.hebergements {
+    background-color: var(--main-bg-color);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .populaires-title {
@@ -322,9 +318,16 @@ a {
     align-items: center;
 }
 
-.populaires-cards .card {
+.populaires-cards {
+    margin-top: 20px;
     display: flex;
-    margin-top: 33px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.card {
+    display: flex;
 }
 
 .populaires-cards img {
@@ -362,10 +365,6 @@ a {
     padding: 30px;
 }
 
-.activites-titre h2 {
-    font-size: 1.2em;
-}
-
 .activites-groupe-card {
     display: flex;
     flex-wrap: wrap;
@@ -399,9 +398,6 @@ a {
 
 .activites-card h3{
     margin: 0;
-    font-size: 16px;
-    font-weight: 700;
-    
 }
 
 /***** FOOTER *****/
@@ -461,13 +457,9 @@ footer li {
     }
 
     .populaires-cards {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .populaires-cards a {
-        width: 30%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
     }
 
     .populaires-cards .card-title {
@@ -638,6 +630,7 @@ footer li {
     }
 
     .populaires-cards {
+        display: flex;
         flex-direction: column;
     }
 
@@ -649,9 +642,7 @@ footer li {
         width: 100%;
     }
 
-    .populaires-cards .card {
-        margin-top: 18px;
-    }
+    
 
     .populaires-cards .card-title {
         font-size: 16px;
